@@ -11,14 +11,14 @@ bool prevD2State = HIGH;
 
 void setup() {
   display.setBrightness(0x0f);
-  pinMode(D2, INPUT);
-  pinMode(D0, INPUT);
+  pinMode(D3, INPUT);
+  pinMode(D1, INPUT);
   display.showNumberDec(0);
   num = 0; // 初始化全局变量
 }
 
 void loop() {
-  bool currentD2State = digitalRead(D2);
+  bool currentD2State = digitalRead(D3);
 
   if(currentD2State == LOW && prevD2State == HIGH) {
     num++;
@@ -26,8 +26,4 @@ void loop() {
   }
 
   prevD2State = currentD2State;
-
-  if(digitalRead(D0) == HIGH){
-    setup();
-  }
 }
