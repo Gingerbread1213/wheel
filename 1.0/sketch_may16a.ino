@@ -26,4 +26,8 @@ void loop() {
   }
 
   prevD2State = currentD2State;
+<<<<<<< HEAD:1.0/sketch_may16a.ino
 }
+=======
+}
+>>>>>>> refs/remotes/origin/main:sketch_apr8a/sketch_apr8a.ino
