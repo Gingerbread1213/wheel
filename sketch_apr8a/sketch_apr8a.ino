@@ -24,12 +24,14 @@ const char DEVICE_KEY[]  = "E7A4E0UMAFWSOXIVAT7W";    // Secret device password
 void onRoundChange();
 
 int roundNum = 0;
+float distance;
 
 void initProperties(){
 
   ArduinoCloud.setBoardId(DEVICE_LOGIN_NAME);
   ArduinoCloud.setSecretDeviceKey(DEVICE_KEY);
   ArduinoCloud.addProperty(roundNum, READWRITE, ON_CHANGE, onRoundChange);
+  ArduinoCloud.addProperty(distance, READWRITE, ON_CHANGE, onDistanceChange);
 
 }
 
@@ -64,7 +66,7 @@ void loop() {
     num++;
     display.showNumberDec(num);
     roundNum = num;
-
+    distance = num*3.14159*16/100;
   }
 
   prevD2State = currentD2State;
@@ -77,6 +79,10 @@ void onRoundChange()  {
   
  
 
+}
+
+void onDistanceChange()  {
+  // Add your code here to act upon Distance change
 }
 
 // 08d62018-4d0b-4083-86f9-efd491513fdb
